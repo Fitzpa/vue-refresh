@@ -6,7 +6,7 @@
     </p>
     <div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none justify-center items-center flex-col">
       <div class="flex items-center mb-6">
-        <h3 class="text-gray-700 text-lg font-bold">{{ counterTitle }}</h3>
+        <h3 class="text-gray-700 text-lg font-bold">{{ counterData.title }}</h3>
       </div>
       <div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0 mb-6">
         <button
@@ -23,7 +23,7 @@
       <div class="space-y-4 sm:mx-auto sm:space-y-0 mb-12">
         <span
           class="counter flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-2xl font-medium text-black shadow-sm sm:px-8">
-          {{ counter }}
+          {{ counterData.count }}
         </span>
       </div>
       <div class="edit">
@@ -33,11 +33,11 @@
         <div class="mt-1">
           <input
             id="title"
-            v-model="counterTitle"
+            v-model="counterData.title"
             type="text"
             name="title"
             class="block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-            placeholder="Counter"/>
+            placeholder="Counter" />
         </div>
       </div>
     </div>
@@ -48,16 +48,21 @@
 //* SCRIPT SETUP PATTERN 
 //* the new way
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 
 const counter = ref(0),
   counterTitle = ref('Counter')
 
+const counterData = reactive({
+  count: 0,
+  title: 'Counter',
+})
+
 const increaseCounter = () => {
-  counter.value++
+  counterData.count++
 }
 
 const decreaseCounter = () => {
-  counter.value--
+  counterData.count--
 }
 </script>
