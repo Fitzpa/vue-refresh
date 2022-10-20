@@ -76,6 +76,7 @@ module.exports = {
       {
         // Override all options of `prettier` here
         // @see https://prettier.io/docs/en/options.html
+        bracketSameLine: true,
         printWidth: 100,
         singleQuote: true,
         semi: false,
