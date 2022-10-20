@@ -27,16 +27,17 @@
         </span>
       </div>
       <div class="edit">
-        <label for="email" class="block text-sm font-medium text-gray-700">
+        <label for="title" class="block text-sm font-medium text-gray-700">
           Edit Counter Title:
         </label>
         <div class="mt-1">
           <input
-            id="email"
-            type="email"
-            name="email"
+            id="title"
+            v-model="counterTitle"
+            type="text"
+            name="title"
             class="block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-            placeholder="you@example.com" />
+            placeholder="Counter"/>
         </div>
       </div>
     </div>
