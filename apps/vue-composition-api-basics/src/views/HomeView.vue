@@ -48,6 +48,7 @@ const decreaseCounter = () => {
 //* SETUP FUNCTION PATTERN
 //* the old way
 
+
 //   <script>
 // import { ref } from 'vue'
 
@@ -73,4 +74,6 @@ const decreaseCounter = () => {
 //     }
 //   },
 // }
+//
+// eslint-disable-next-line
 // </script>

@@ -1,5 +1,5 @@
 {
-  "name": "vue-composition-api-basics",
+  "name": "vue-options-api-basics",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
