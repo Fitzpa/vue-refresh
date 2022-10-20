@@ -1,5 +1,11 @@
 module.exports = {
-  extends: ['plugin:vue/recommended', 'plugin:prettier-vue/recommended', 'turbo', 'prettier'],
+  extends: [
+    'plugin:vue/recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:prettier-vue/recommended',
+    'turbo',
+    'prettier',
+  ],
   settings: {
     'prettier-vue': {
       // Settings for how to process Vue SFC Blocks
