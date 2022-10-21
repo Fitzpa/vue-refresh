@@ -23,6 +23,12 @@
           {{ counter }}
         </span>
       </div>
+      <div class="space-y-4 sm:mx-auto sm:space-y-0">
+        <span
+          class="counter flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-2xl font-medium text-black shadow-sm sm:px-8">
+          {{ myComputedProperty }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +40,14 @@ export default {
     return {
       counter: 0,
     }
+  },
+  computed: {
+    myComputedProperty() {
+      // A computed property is a property that is calculated based on other properties
+      // perform some computation based on the data
+      const result = this.counter * 2
+      return result
+    },
   },
   methods: {
     increaseCounter() {
