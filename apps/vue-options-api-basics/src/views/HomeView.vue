@@ -49,6 +49,21 @@ export default {
       return result
     },
   },
+  watch: {
+    counter(newCount, oldCount) {
+      // watcher name is the name of the property we want to watch
+      // A watch is a property that is triggered when a property changes
+      // perform some action when the data changes
+      if (newCount === 5) {
+        console.log('You reached 5!')
+        alert('Count is now 5!')
+      }
+      if (oldCount === 5) {
+        console.log('You left 5!')
+        alert('Count is no longer 5!')
+      }
+    },
+  },
   methods: {
     increaseCounter() {
       this.counter++
