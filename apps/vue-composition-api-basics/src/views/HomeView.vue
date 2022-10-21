@@ -54,7 +54,7 @@
 //* SCRIPT SETUP PATTERN 
 //* the new way
 <script setup>
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
 
 const counter = ref(0),
   counterTitle = ref('Counter')
@@ -63,6 +63,15 @@ const counterData = reactive({
   count: 0,
   title: 'Counter',
 })
+
+watch(
+  () => counterData.count,
+  (newCount, oldCount) => {
+    // we have access to the new and old values of the property we are watching
+    console.log('newCount', newCount)
+    console.log('oldCount', oldCount)
+  }
+)
 
 const myComputedProperty = computed(() => {
   const result = counterData.count * 2
