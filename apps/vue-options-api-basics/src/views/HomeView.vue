@@ -64,6 +64,16 @@ export default {
       }
     },
   },
+  mounted() {
+    // A lifecycle hook is a function that is called at a specific point in the lifecycle of a component
+    // perform some action when the component is mounted
+    console.log('Mounted!')
+  },
+  unmounted() {
+    // A lifecycle hook is a function that is called at a specific point in the lifecycle of a component
+    // perform some action when the component is unmounted
+    console.log('Unmounted!')
+  },
   methods: {
     increaseCounter() {
       this.counter++
