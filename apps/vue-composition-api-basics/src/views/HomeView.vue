@@ -54,7 +54,16 @@
 //* SCRIPT SETUP PATTERN 
 //* the new way
 <script setup>
-import { ref, reactive, computed, watch } from 'vue'
+import {
+  ref,
+  reactive,
+  computed,
+  watch,
+  onBeforeMount,
+  onMounted,
+  onBeforeUnmount,
+  onUnmounted,
+} from 'vue'
 
 const counter = ref(0),
   counterTitle = ref('Counter')
@@ -85,4 +94,18 @@ const increaseCounter = () => {
 const decreaseCounter = () => {
   counterData.count--
 }
+
+onBeforeMount(() => {
+  console.log('onBeforeMount')
+})
+
+onMounted(() => {
+  console.log('onMounted')
+})
+onBeforeUnmount(() => {
+  console.log('onBeforeUnmount')
+})
+onUnmounted(() => {
+  console.log('onUnmounted')
+})
 </script>
