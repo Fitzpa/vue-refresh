@@ -20,10 +20,16 @@
           +
         </button>
       </div>
+      <div class="space-y-4 sm:mx-auto sm:space-y-0 mb-6">
+        <span
+          class="counter flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-2xl font-medium text-black shadow-sm sm:px-8">
+          Count: {{ counterData.count }}
+        </span>
+      </div>
       <div class="space-y-4 sm:mx-auto sm:space-y-0 mb-12">
         <span
           class="counter flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-2xl font-medium text-black shadow-sm sm:px-8">
-          {{ counterData.count }}
+          Count Doubled: {{ myComputedProperty }}
         </span>
       </div>
       <div class="edit">
@@ -48,7 +54,7 @@
 //* SCRIPT SETUP PATTERN 
 //* the new way
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 
 const counter = ref(0),
   counterTitle = ref('Counter')
@@ -56,6 +62,11 @@ const counter = ref(0),
 const counterData = reactive({
   count: 0,
   title: 'Counter',
+})
+
+const myComputedProperty = computed(() => {
+  const result = counterData.count * 2
+  return result
 })
 
 const increaseCounter = () => {
