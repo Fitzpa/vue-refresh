@@ -54,6 +54,7 @@
 //* SCRIPT SETUP PATTERN 
 //* the new way
 <script setup>
+// imports
 import {
   ref,
   reactive,
@@ -63,10 +64,15 @@ import {
   onMounted,
   onBeforeUnmount,
   onUnmounted,
+  onBeforeUpdate,
+  onUpdated,
 } from 'vue'
 
-const counter = ref(0),
-  counterTitle = ref('Counter')
+// counter
+const counter = ref(0)
+
+// counterTitle
+const counterTitle = ref('Counter')
 
 const counterData = reactive({
   count: 0,
@@ -98,7 +104,7 @@ const decreaseCounter = () => {
 onBeforeMount(() => {
   console.log('onBeforeMount')
 })
-
+// can use as many mounted hooks as you want
 onMounted(() => {
   console.log('onMounted')
 })
@@ -107,5 +113,13 @@ onBeforeUnmount(() => {
 })
 onUnmounted(() => {
   console.log('onUnmounted')
+})
+
+onBeforeUpdate(() => {
+  console.log('onBeforeUpdate')
+})
+
+onUpdated(() => {
+  console.log('onUpdated')
 })
 </script>
